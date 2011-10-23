@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="test suite" parallel="methods" verbose="1"
+	thread-count="100" data-provider-thread-count="50">
+
+	<parameter name="browser" value="firefox" />
+	<!-- <parameter name="version" value="9.0.100.10" />-->
+	
+
+
+	<listeners>
+		<listener class-name="org.openqa.selenium.support.testng.SeleniumCapability"></listener>
+		<listener class-name="org.openqa.selenium.support.testng.LocalGrid"></listener>
+	</listeners>
+
+</suite>
