@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="ubuntu" tests="2" failures="0" timestamp="23 Oct 2011 22:43:07 GMT" time="22.46" errors="0">
-  <testcase name="test" time="8.902" classname="Demo"/>
-  <testcase name="test2" time="12.585" classname="Demo"/>
-</testsuite>
