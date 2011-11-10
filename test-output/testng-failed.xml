@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="50" name="Failed suite [test suite]" parallel="methods" data-provider-thread-count="50">
+  <parameter name="webdriver.chrome.driver" value="/home/freynaud/wrokspace/chromedriver"/>
+  <parameter name="browserName" value="firefox"/>
+  <parameter name="version" value="7"/>
+  <listeners>
+    <listener class-name="org.openqa.selenium.support.testng.SeleniumCapability"/>
+    <listener class-name="org.openqa.selenium.support.testng.LocalGrid"/>
+  </listeners>
+  <test name="Default test(failed)" parallel="methods" preserve-order="true">
+    <parameter name="webdriver.chrome.driver" value="/home/freynaud/wrokspace/chromedriver"/>
+    <parameter name="browserName" value="firefox"/>
+    <parameter name="version" value="7"/>
+    <classes>
+      <class name="Demo">
+        <methods>
+          <include name="test"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>
