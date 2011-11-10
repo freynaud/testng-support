@@ -63,7 +63,7 @@ public class TestSession {
    */
   public static Selenium selenium() {
     Selenium sel = (Selenium) get(SELENIUM);
-    if (sel != null) {
+    if (sel == null) {
       printListenerHelp();
     }
     return sel;
