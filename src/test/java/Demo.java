@@ -19,13 +19,7 @@ public class Demo {
   }
 
 
-  @Test
-  @WebTest(protocol = SeleniumProtocol.Selenium)
-  public void test2() {
-    // selenium legacy API
-    selenium().open("http://ebay.com");
-  }
-
+ 
 
   // works with all the normal testng features, dependencies, invoc count etc.
   @Test(invocationCount = 2, threadPoolSize = 2)
