@@ -1,10 +1,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="test suite" parallel="methods" verbose="1"
-	thread-count="100" data-provider-thread-count="50">
+	thread-count="50" data-provider-thread-count="50">
+
 
 	<parameter name="browserName" value="firefox" />
 	<!-- <parameter name="version" value="9.0.100.10" />-->
+
+	<!-- version only used for webdriver protocol -->
+	<!-- <parameter name="version" value="7" /> -->
 	
+	<!-- OS only used for webdriver protocol -->
+	<!-- <parameter name="platform" value="LINUX" />-->
+	
+
+	<!-- local grid setup -->
+	<parameter name="webdriver.chrome.driver" value="/home/freynaud/wrokspace/chromedriver"></parameter>
+	<!-- <parameter name="url" value="http://localhost:4444/wd/hub"></parameter>-->
 
 
 	<listeners>
