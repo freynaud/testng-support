@@ -6,7 +6,7 @@ import org.openqa.selenium.support.testng.WebTest;
 import org.testng.annotations.Test;
 
 
-public class Demo {
+public class Demo1 {
 
 
   @Test

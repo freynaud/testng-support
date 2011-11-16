@@ -1,28 +1,17 @@
-import java.text.ParseException;
+import static org.openqa.selenium.support.testng.TestSession.selenium;
 
-import org.openqa.selenium.support.testng.TestSession;
+import org.openqa.grid.common.SeleniumProtocol;
 import org.openqa.selenium.support.testng.WebTest;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import pageObject.HomePage;
-import pageObject.SearchResultPage;
 
 
 public class Demo2 {
 
-  
   @Test
-  @WebTest
-  public void testSearch() throws ParseException{
-    TestSession.webdriver().get("http://www.ebay.co.uk/");
-    
-    HomePage homePage = new HomePage();
-    SearchResultPage result = homePage.search("ipod");
-    
-   int totalIpod = result.getResultCount();
-   
-   Assert.assertTrue(totalIpod>1000,"there should be more than "+totalIpod+" on the site.");
-    
+  @WebTest(protocol = SeleniumProtocol.Selenium)
+  public void test2() {
+    // selenium legacy API
+    selenium().open("http://ebay.com");
   }
+
 }
