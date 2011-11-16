@@ -7,7 +7,6 @@
 
 
 	<dependencies>
-
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
