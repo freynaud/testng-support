@@ -116,12 +116,17 @@ public class TestSession {
     if (getProtocol() == SeleniumProtocol.Selenium) {
       selenium().close();
     } else {
-      webdriver().quit();
+      try {
+        webdriver().quit();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
   }
 
   /**
    * local for debugging or remote.
+   * 
    * @return the url the grid listen on.
    */
   private static URL getGridUrl() {
@@ -134,6 +139,7 @@ public class TestSession {
 
   /**
    * set the URL that will be used during the test. Default to a local grid.
+   * 
    * @param url
    */
   public static void setHubUrl(String url) {
