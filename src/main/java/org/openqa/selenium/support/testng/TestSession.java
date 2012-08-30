@@ -89,6 +89,7 @@ public class TestSession {
     } else {
       DesiredCapabilities cap = new DesiredCapabilities();
       cap.setBrowserName(browserName);
+      cap.setCapability("acceptSslCerts", true);
       if (version != null) {
         cap.setVersion(version);
       }

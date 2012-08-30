@@ -3,19 +3,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.uiautomation</groupId>
 	<artifactId>testng-support</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 
 
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>2.21.0</version>
+			<version>2.25.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-server</artifactId>
-			<version>2.21.0</version>
+			<version>2.25.0</version>
 		</dependency>
 
 		<dependency>
