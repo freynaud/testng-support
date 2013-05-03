@@ -1,13 +1,19 @@
 package org.openqa.selenium.support.testng;
 
+import java.io.File;
 import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.UUID;
 
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.remote.Augmenter;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener2;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.internal.ConstructorOrMethod;
 
 
@@ -54,6 +60,19 @@ public class SeleniumCapability implements IInvokedMethodListener2 {
   public void afterInvocation(IInvokedMethod method, ITestResult testResult, ITestContext context) {
     WebTest web = getWebTestAnnotation(method);
     if (web != null) {
+      boolean always = true;
+      if (!testResult.isSuccess() || always){
+        try {
+          TakesScreenshot ss = (TakesScreenshot) new Augmenter().augment(TestSession.webdriver());
+          File f = new File(UUID.randomUUID().toString());
+          File screenhot = ss.getScreenshotAs(OutputType.FILE);
+          screenhot.renameTo(f);
+          Reporter.setCurrentTestResult(testResult);
+          Reporter.log("<img src='" + f.getAbsolutePath() + "' />");
+        }catch (Exception e) {
+          Reporter.log("tried to screenshot. Failed."+e.getMessage());
+        }
+      }
       TestSession.stop();
     }
   }

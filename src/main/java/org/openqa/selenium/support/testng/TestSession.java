@@ -43,7 +43,7 @@ public class TestSession {
    * @return the webdriver object bound to the current test.
    */
   public static WebDriver webdriver() {
-    if (getProtocol() == SeleniumProtocol.Selenium) {
+      if (getProtocol() == SeleniumProtocol.Selenium) {
       throw new RuntimeException("You cannot use the webdriver API on a selenium legacy server.");
     } else {
       WebDriver driver = (WebDriver) get(WEBDRIVER);
@@ -69,6 +69,10 @@ public class TestSession {
     return sel;
   }
 
+  
+  public static String getBrowserName(){
+    return (String)get("browserName");
+  }
   /**
    * start the browser for the current test.
    * 
@@ -80,7 +84,7 @@ public class TestSession {
    */
   public static void start(SeleniumProtocol protocol, String browserName, String version, Platform p) {
     put(PROTOCOL, protocol);
-
+    put("browserName",browserName);
     URL url = getGridUrl();
     if (getProtocol() == SeleniumProtocol.Selenium) {
       Selenium selenium = new DefaultSelenium(url.getHost(), url.getPort(), browserName, START_URL);

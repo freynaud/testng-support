@@ -3,6 +3,7 @@ package org.openqa.selenium.support.testng;
 import java.net.MalformedURLException;
 
 import org.openqa.grid.common.GridRole;
+import org.openqa.grid.common.JSONConfigurationUtils;
 import org.openqa.grid.common.RegistrationRequest;
 import org.openqa.grid.internal.utils.GridHubConfiguration;
 import org.openqa.grid.internal.utils.SelfRegisteringRemote;
@@ -21,12 +22,12 @@ public class LocalGrid implements ISuiteListener {
   @Override
   public void onStart(ISuite suite) {
     try {
-
       if (isLocalGrid(suite)) {
         setGridURL(suite);
         setupChromeDriver(suite);
 
         GridHubConfiguration config = new GridHubConfiguration();
+        config.setHost("localhost");
         hub = new Hub(config);
         hub.start();
 
@@ -42,6 +43,8 @@ public class LocalGrid implements ISuiteListener {
 
         // TODO freynaud API call for node check
         Thread.sleep(1000);
+      }else{
+        setGridURL(suite);
       }
 
     } catch (MalformedURLException e) {

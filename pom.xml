@@ -1,57 +1,57 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.uiautomation</groupId>
-	<artifactId>testng-support</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.uiautomation</groupId>
+    <artifactId>testng-support</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
 
 
-	<dependencies>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>2.25.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-server</artifactId>
-			<version>2.25.0</version>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.32.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>2.32.0</version>
+        </dependency>
 
-		<dependency>
-			<groupId>tomcat</groupId>
-			<artifactId>jasper-compiler</artifactId>
-			<version>5.5.23</version>
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>jasper-compiler</artifactId>
+            <version>5.5.23</version>
 
-		</dependency>
+        </dependency>
 
-		<dependency>
-			<groupId>tomcat</groupId>
-			<artifactId>jasper-runtime</artifactId>
-			<version>5.5.23</version>
-		</dependency>
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>jasper-runtime</artifactId>
+            <version>5.5.23</version>
+        </dependency>
 
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>6.1.1</version>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8</version>
+        </dependency>
+    </dependencies>
 
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.0.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 </project>
